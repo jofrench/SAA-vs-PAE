@@ -6,9 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <meta name="description" content="Schacht Aslani Architects vs PAE - Bike to Work Month">
+    <meta name="author" content="Jonathan French and Marshall Turner">
 
     <title>SAA vs PAE</title>
 
@@ -18,10 +17,6 @@
     <!-- Custom styles for this template -->
     <link href="css/jumbotron.css" rel="stylesheet">
     <link href="css/saa-styles.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -79,22 +74,11 @@
           <h3>Saddle Addicted Architects</h3>
           <p>tweed wearing bespectacled cycling savants who carve up the streets in style.  unless, of course, it's raining.  </p>
 
-          <h4>Team Stats</h4>
-          <ul>
-            <li>Participation</li>
-            <li>Total Rides</li>
-            <li>Total Mileage</li>
-            <li>Avg. Commute Distance</li>
-          </ul>
+          <h4>Total Participation</h4>
+          <div id="saaParticipation" class="participation-graph"></div>
 
-          <h4>Members</h4>
-          <ol>
-            <li><a href=""></a>Member Name</li>
-            <li><a href=""></a>Member Name</li>
-            <li><a href=""></a>Member Name</li>
-            <li><a href=""></a>Member Name</li>
-            <li><a href=""></a>Member Name</li>
-          </ol>
+          <h4>Leaderboard</h4>
+          <div id="saaTop5" class="performance-graph"></div>
         </div> <!-- /.col-lg-6 -->
         
 
@@ -103,22 +87,14 @@
           <h3>Pedal Accelerated Engineers</h3>
           <p>boldly cycling the greatest possible distance with the least possible expenditure of energy in the fastest possible time. </p>
 
-          <h4>Team Stats</h4>
-          <ul>
-            <li>Participation</li>
-            <li>Total Rides</li>
-            <li>Total Mileage</li>
-            <li>Avg. Commute Distance</li>
-          </ul>
+          <h4>Total Participation</h4>
+          <!-- Participation -->
+          <div id="paeParticipation" class="participation-graph"></div>
+          <!-- Total Miles -->
+          <!-- Average Commute Distance -->
 
-          <h4>Members</h4>
-          <ol>
-            <li><a href=""></a>Member Name</li>
-            <li><a href=""></a>Member Name</li>
-            <li><a href=""></a>Member Name</li>
-            <li><a href=""></a>Member Name</li>
-            <li><a href=""></a>Member Name</li>
-          </ol>
+          <h4>Leaderboard</h4>
+          <div id="paeTop5" class="performance-graph"></div>
         </div> <!-- /.col-lg-6 -->
       </div> <!-- /.row.marketing -->
       
@@ -173,9 +149,14 @@
       </footer>
 
     </div> <!-- /container -->
+    
 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="js/highcharts/highcharts.js"></script>
+    <script src="js/highcharts/highcharts-more.js"></script>
+    <script src="js/highcharts/modules/solid-gauge.js"></script>
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/leaderboardChart.js"></script>
+    <script src="js/participationChart.js"></script>
   </body>
 </html>
