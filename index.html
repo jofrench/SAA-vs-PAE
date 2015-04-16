@@ -32,27 +32,39 @@
 
   <body>
 
-    <div class="container">
-      <div class="header clearfix">
-        <nav>
-          <ul class="nav nav-pills pull-right">
-            <li role="presentation" class="active"><a href="#standings">Standings</a></li>
-            <li role="presentation"><a href="#map">Map</a></li>
-            <li role="presentation"><a href="#metrics">Metrics</a></li>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">SAA vs PAE Bike Off</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#standings">Standings</a></li>
+            <li><a href="#map">Map</a></li>
+            <li><a href="#metrics">Metrics</a></li>
           </ul>
-        </nav>
-        <h3 class="text-muted">PAE vs. SAA Bike-Off</h3>
+        </div><!--/.nav-collapse -->
       </div>
-      
+    </nav>
+
+    <div class="container">
+
       <div class="jumbotron">
         <h1 class="superYear">2015</h1>
         <h1>Cycling Smackdown</h1>
-        <p class="lead">A friendly competition for Bike-to-Work Month between Schacht|Aslani Architects and PAE Engineers</p>
+        <p class="lead">A friendly competition for Bike-to-Work Month between Schacht Aslani Architects and PAE Engineers</p>
         <p><a class="btn btn-lg btn-success" href="#" role="button">Ride for your team</a></p>
       </div>
 
 
-      <a name="standings"></a> 
+      <a name="standings" class="anchor" id="top"></a> 
       <div class="row marketing">
         <div class="col-lg-6">
           <h4>Saddle Addicted Architects</h4>
@@ -103,7 +115,7 @@
         </div>
       </div>
       
-      <a name="map"></a> 
+      <a name="map" class="anchor" id="top"></a> 
       <div class="jumbotron">
         <h1>cycling route heat map</h1>
         <p class="lead">2D or 3d map of Seattle and surrounding environs.  map each individual commute.  SAA riders = red.  PAE riders = blue.  map ride statistics with color gradients.</p>
@@ -111,7 +123,7 @@
       </div>
       
 
-      <a name="metrics"></a> 
+      <a name="metrics" class="anchor" id="top"></a> 
       <div class="row marketing">
         <div class="col-lg-6">
           <h4>Route Metrics</h4>
