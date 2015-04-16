@@ -35,6 +35,7 @@
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
+        
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -43,7 +44,8 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="#">SAA vs PAE Bike Off</a>
-        </div>
+        </div> <!-- /.navbar-header -->
+        
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#standings">Standings</a></li>
@@ -51,11 +53,13 @@
             <li><a href="#metrics">Metrics</a></li>
           </ul>
         </div><!--/.nav-collapse -->
-      </div>
+      </div> <!-- /.container -->
     </nav>
 
+    <!-- Our main page container, floats underneath the navbar -->
     <div class="container">
-
+      
+      <!-- The big central block at the top of the page. What cool things can we put here? -->
       <div class="jumbotron">
         <h1 class="superYear">2015</h1>
         <h1>Cycling Smackdown</h1>
@@ -63,11 +67,16 @@
         <p><a class="btn btn-lg btn-success" href="#" role="button">Ride for your team</a></p>
       </div>
 
-
+      
+      <!-- //Standings blocks -->
       <a name="standings" class="anchor" id="top"></a> 
       <div class="row marketing">
+        
+
+
+        <!-- Schacht Aslani's Block -->
         <div class="col-lg-6">
-          <h4>Saddle Addicted Architects</h4>
+          <h3>Saddle Addicted Architects</h3>
           <p>tweed wearing bespectacled cycling savants who carve up the streets in style.  unless, of course, it's raining.  </p>
 
           <h4>Team Stats</h4>
@@ -75,24 +84,23 @@
             <li>Participation</li>
             <li>Total Rides</li>
             <li>Total Mileage</li>
-            <li>Ave. Commute Distance</li>
-
+            <li>Avg. Commute Distance</li>
           </ul>
 
           <h4>Members</h4>
           <ol>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
+            <li><a href=""></a>Member Name</li>
+            <li><a href=""></a>Member Name</li>
+            <li><a href=""></a>Member Name</li>
+            <li><a href=""></a>Member Name</li>
+            <li><a href=""></a>Member Name</li>
           </ol>
+        </div> <!-- /.col-lg-6 -->
+        
 
-          
-        </div>
-
+        <!-- PAE's Block -->
         <div class="col-lg-6">
-          <h4>Pedal Accelerated Engineers</h4>
+          <h3>Pedal Accelerated Engineers</h3>
           <p>boldly cycling the greatest possible distance with the least possible expenditure of energy in the fastest possible time. </p>
 
           <h4>Team Stats</h4>
@@ -100,21 +108,22 @@
             <li>Participation</li>
             <li>Total Rides</li>
             <li>Total Mileage</li>
-            <li>Ave. Commute Distance</li>
-
+            <li>Avg. Commute Distance</li>
           </ul>
 
           <h4>Members</h4>
           <ol>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
+            <li><a href=""></a>Member Name</li>
+            <li><a href=""></a>Member Name</li>
+            <li><a href=""></a>Member Name</li>
+            <li><a href=""></a>Member Name</li>
+            <li><a href=""></a>Member Name</li>
           </ol>
-        </div>
-      </div>
+        </div> <!-- /.col-lg-6 -->
+      </div> <!-- /.row.marketing -->
       
+
+      <!-- Map Section -->
       <a name="map" class="anchor" id="top"></a> 
       <div class="jumbotron">
         <h1>cycling route heat map</h1>
@@ -122,26 +131,29 @@
         <p><a class="btn btn-lg btn-success" href="#" role="button">Update</a></p>
       </div>
       
-
+      
+  
+      <!-- Metrics Section -->
       <a name="metrics" class="anchor" id="top"></a> 
       <div class="row marketing">
-        <div class="col-lg-6">
-          <h4>Route Metrics</h4>
-          <p>Topographic Analysis</p>
 
-          <h4>Route Stats</h4>
+        <div class="col-lg-6">
+          <h3>Route</h3>
+          <h4>Topography</h4>
+          <img src="http://www.placehold.it/300x200" class="img-responsive stats" alt="Responsive image">
+          <h4>Stats</h4>
           <ul>
             <li>team member<a href=""></a></li>
             <li>distance - one-way<a href=""></a></li>
             <li>total elevation change<a href=""></a></li>
             <li>rider frequency<a href=""></a></li>
           </ul>
-
-      </div>
+        </div>
 
       <div class="col-lg-6">
-          <h4>Performance Metrics</h4>
-          <p>Team Analysis</p>
+          <h3>Performance</h3>
+          <h4>Metrics</h4>
+          <img src="http://www.placehold.it/300x200" class="img-responsive stats" alt="Responsive image">
 
           <h4>Team Stats</h4>
           <ul>
@@ -157,7 +169,7 @@
       </div>
 
       <footer class="footer">
-        <p>&copy; Company 2014</p>
+        <p>&copy; Schacht Aslani Architects & PAE - 2015</p>
       </footer>
 
     </div> <!-- /container -->
