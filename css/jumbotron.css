@@ -46,10 +46,17 @@ body {
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
+  background-image: url(../img/bike-race.jpg);
+  background-size: cover;
+  color: white;
 }
 .jumbotron .btn {
   padding: 14px 24px;
   font-size: 21px;
+}
+
+.jumbotron h1 {
+  color: white;
 }
 
 /* Supporting marketing content */

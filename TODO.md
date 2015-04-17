@@ -1,12 +1,11 @@
 # High Priority
 
-+   Get main layout set up in HTML, with placeholders for data
-+   Get placeholder map in place
++   Get Kimono scraping set up to get data from Luum site
 
 # Standard Priority
 
-+   See how we can get data from mapmyride
-+   Set up app on Heroku
++   Create cool graphics (do we want a theme?)
 
 # Low Priority
-+ drink beers
+
++   Register a domain name (worth the cost?)
