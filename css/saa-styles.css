@@ -1,11 +1,34 @@
 .jumbotron .superYear {
-  font-size: 70px;
+  font-size: 5em;
   font-weight: 700;
   margin-bottom: 0;
 }
 
 .jumbotron h1 {
 	margin-top: 0;
+	font-size: 5em;
+}
+
+@media (max-width: 768px) {
+	
+	.jumbotron .superYear {
+	  font-size: 3em;
+	  font-weight: 700;
+	  margin-bottom: 0;
+	}
+
+	.jumbotron h1 {
+		margin-top: 0;
+		font-size: 3em;
+	}
+
+	.jumbotron {
+		padding: 20px;
+	}
+
+	.lead {
+		padding: 0px 20px 10px 20px;
+	}
 }
 
 a.anchor{display: block; position: relative; top: -80px; visibility: hidden;}
@@ -73,7 +96,7 @@ img.stats {
 
 p.largeNumber {
 	font-weight: 700;
-	font-size: 100px;
+	font-size: 4em;
 }
 
 .companyLogo {
