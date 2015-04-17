@@ -153,13 +153,32 @@
 
     </div> <!-- /container -->
     
-
+    <!-- jQuery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    
+    <!-- grab the data from the Kimono API and generate our charts -->
     <script src="js/getData.js"></script>
+
+    <!-- our fancy charts -->
     <script src="js/highcharts/highcharts.js"></script>
     <script src="js/highcharts/highcharts-more.js"></script>
     <script src="js/highcharts/modules/solid-gauge.js"></script>
+    
+    <!-- just loads a google map -->
     <script src="js/mapLoader.js"></script>
+    
+
+    <!-- track that shit -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-33210041-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
 
   </body>
 </html>
