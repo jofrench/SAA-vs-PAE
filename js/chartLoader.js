@@ -1,6 +1,6 @@
 $(function () { 
     
-    renderAngularGraph('#saaParticipation', 95);
+    renderAngularGraph('#saaParticipation', 89);
     renderAngularGraph('#paeParticipation', 65);
     renderLeaderBoardChart('#saaMilesLeaderboard', 'Miles', ['Marshall', 'Jonathan', 'Adam', 'Kristina', 'Carl', 'Evan', 'Andy', 'Melanie', 'Eric', 'Casey'], [180,135,122,101,95,85,70,65,55,40]);
     renderLeaderBoardChart('#paeMilesLeaderboard', 'Miles', ['Test 1', 'Test 2', 'Test 3', 'Test 4', 'Test 5', 'Test 6', 'Test 7', 'Test 8', 'Test 9', 'Test 10'], [160,110,90,80,65,55,43,23,10,9]);
