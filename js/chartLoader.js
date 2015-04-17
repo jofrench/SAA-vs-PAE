@@ -2,15 +2,15 @@ $(function () {
     
     renderAngularGraph('#saaParticipation', 89);
     renderAngularGraph('#paeParticipation', 65);
-    renderLeaderBoardChart('#saaMilesLeaderboard', 'Miles', ['Jonathan', 'Carl', 'Marshall', 'Andy', 'Adam', 'Kristina', 'Evan', 'Eric', 'Casey'], [180,135,122,101,95,85,70,65,55,40]);
-    renderLeaderBoardChart('#paeMilesLeaderboard', 'Miles', ['Test 1', 'Test 2', 'Test 3', 'Test 4', 'Test 5', 'Test 6', 'Test 7', 'Test 8', 'Test 9', 'Test 10'], [160,110,90,80,65,55,43,23,10,9]);
-    renderLeaderBoardChart('#saaTripsLeaderboard', 'Trips', ['Marshall', 'Jonathan', 'Adam', 'Kristina', 'Carl', 'Evan', 'Andy', 'Melanie', 'Eric', 'Casey'], [25,24,20,18,14,14,12,10,9,5]);
-    renderLeaderBoardChart('#paeTripsLeaderboard', 'Trips', ['Test 1', 'Test 2', 'Test 3', 'Test 4', 'Test 5', 'Test 6', 'Test 7', 'Test 8', 'Test 9', 'Test 10'], [23,23,19,16,16,14,11,7,6,4]);
+    renderLeaderBoardChart('#saaMilesLeaderboard', '#C00000', 'Miles', ['Jonathan', 'Carl', 'Marshall', 'Andy', 'Adam', 'Kristina', 'Evan', 'Eric', 'Casey'], [180,135,122,101,95,85,70,65,55,40]);
+    renderLeaderBoardChart('#paeMilesLeaderboard', '#0078FF', 'Miles', ['Test 1', 'Test 2', 'Test 3', 'Test 4', 'Test 5', 'Test 6', 'Test 7', 'Test 8', 'Test 9', 'Test 10'], [160,110,90,80,65,55,43,23,10,9]);
+    renderLeaderBoardChart('#saaTripsLeaderboard', '#C00000', 'Trips', ['Marshall', 'Jonathan', 'Adam', 'Kristina', 'Carl', 'Evan', 'Andy', 'Melanie', 'Eric', 'Casey'], [25,24,20,18,14,14,12,10,9,5]);
+    renderLeaderBoardChart('#paeTripsLeaderboard', '#0078FF', 'Trips', ['Test 1', 'Test 2', 'Test 3', 'Test 4', 'Test 5', 'Test 6', 'Test 7', 'Test 8', 'Test 9', 'Test 10'], [23,23,19,16,16,14,11,7,6,4]);
 
 });
 
 
-function renderLeaderBoardChart(className, name, riders, miles){
+function renderLeaderBoardChart(className, color, name, riders, miles){
     $(className).highcharts({
         chart: {
             type: 'bar',
@@ -36,7 +36,8 @@ function renderLeaderBoardChart(className, name, riders, miles){
         series: [{
             name: name,
             data: miles,
-            animation: false
+            animation: false,
+            color: color
         }]
     });
 }
