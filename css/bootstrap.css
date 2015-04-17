@@ -1297,7 +1297,9 @@ p {
   margin: 0 0 10px;
 }
 .lead {
+  margin-top: 30px;
   margin-bottom: 20px;
+  padding: 0 100px;
   font-size: 16px;
   font-weight: 300;
   line-height: 1.4;

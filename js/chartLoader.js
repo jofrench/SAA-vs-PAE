@@ -2,7 +2,7 @@ $(function () {
     
     renderAngularGraph('#saaParticipation', 95);
     renderAngularGraph('#paeParticipation', 65);
-    renderLeaderBoardChart('#saaTop5', ['Marshall', 'Jonathan', 'Adam', 'Kristina', 'Carl'], [135,83,63,100,120]);
+    renderLeaderBoardChart('#saaTop5', ['Marshall', 'Jonathan', 'Adam', 'Kristina', 'Carl'], [135,122,63,100,120]);
     renderLeaderBoardChart('#paeTop5', ['Test 1', 'Test 2', 'Test 3', 'Test 4', 'Test 5'], [20,80,15,43,110]);
 
 });
@@ -43,7 +43,8 @@ function renderAngularGraph(className, percentage) {
     var gaugeOptions = {
 
         chart: {
-            type: 'solidgauge'
+            type: 'solidgauge',
+            animation: false
         },
 
         title: '',
@@ -110,6 +111,7 @@ function renderAngularGraph(className, percentage) {
         },
 
         series: [{
+            animation: false,
             name: 'Participation %',
             data: [percentage],
             dataLabels: {
