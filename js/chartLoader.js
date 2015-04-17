@@ -2,8 +2,8 @@ $(function () {
     
     renderAngularGraph('#saaParticipation', 95);
     renderAngularGraph('#paeParticipation', 65);
-    renderLeaderBoardChart('#saaTop5', ['Marshall', 'Jonathan', 'Adam', 'Kristina'], [135,83,63,100]);
-    renderLeaderBoardChart('#paeTop5', ['Test 1', 'Test 2', 'Test 3', 'Test 4'], [20,80,15,200]);
+    renderLeaderBoardChart('#saaTop5', ['Marshall', 'Jonathan', 'Adam', 'Kristina', 'Carl'], [135,83,63,100,120]);
+    renderLeaderBoardChart('#paeTop5', ['Test 1', 'Test 2', 'Test 3', 'Test 4', 'Test 5'], [20,80,15,43,110]);
 
 });
 
@@ -47,8 +47,8 @@ function renderAngularGraph(className, percentage) {
         title: '',
 
         pane: {
-            center: ['50%', '85%'],
-            size: '140%',
+            center: ['50%', '70%'],
+            size: '100%',
             startAngle: -90,
             endAngle: 90,
             background: {
