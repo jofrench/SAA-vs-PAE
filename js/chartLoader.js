@@ -2,8 +2,8 @@ $(function () {
     
     renderAngularGraph('#saaParticipation', 95);
     renderAngularGraph('#paeParticipation', 65);
-    renderLeaderBoardChart('#saaTop5', ['Marshall', 'Jonathan', 'Adam', 'Kristina', 'Carl'], [135,122,63,100,120]);
-    renderLeaderBoardChart('#paeTop5', ['Test 1', 'Test 2', 'Test 3', 'Test 4', 'Test 5'], [20,80,15,43,110]);
+    renderLeaderBoardChart('#saaLeaderboard', ['Marshall', 'Jonathan', 'Adam', 'Kristina', 'Carl', 'Evan', 'Andy', 'Melanie', 'Eric', 'Casey'], [180,135,122,101,95,85,70,65,55,40]);
+    renderLeaderBoardChart('#paeLeaderboard', ['Test 1', 'Test 2', 'Test 3', 'Test 4', 'Test 5', 'Test 6', 'Test 7', 'Test 8', 'Test 9', 'Test 10'], [160,110,90,80,65,55,43,23,10,9]);
 
 });
 
