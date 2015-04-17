@@ -11,7 +11,8 @@ $(function () {
 function renderLeaderBoardChart(className, riders, miles){
     $(className).highcharts({
         chart: {
-            type: 'bar'
+            type: 'bar',
+            animation: false
         },
         legend: {
             enabled: false
@@ -32,7 +33,8 @@ function renderLeaderBoardChart(className, riders, miles){
         },
         series: [{
             name: 'Miles',
-            data: miles
+            data: miles,
+            animation: false
         }]
     });
 }
@@ -85,7 +87,7 @@ function renderAngularGraph(className, percentage) {
         plotOptions: {
             solidgauge: {
                 dataLabels: {
-                    y: 5,
+                    y: 15,
                     borderWidth: 0,
                     useHTML: true
                 }
