@@ -16,9 +16,11 @@ $.ajax({
 			totalTrips = totalTrips + Math.abs(parseInt(item.trips));
 			// milesArray.push(item.miles);
 			milesArray.push(getRandomInt(10,200));
+			milesArray.sort(function(a,b){return b-a});
 			nameArray.push(item.name.text);
 			// tripsArray.push(item.trips);
 			tripsArray.push(getRandomInt(3,20));
+			tripsArray.sort(function(a,b){return b-a});
 		});
 
 		// $( "#saaMiles" ).append(totalMiles);
@@ -55,9 +57,11 @@ $.ajax({
 			totalTrips = totalTrips + Math.abs(parseInt(item.trips));
 			// milesArray.push(item.miles);
 			milesArray.push(getRandomInt(10,200));
+			milesArray.sort(function(a,b){return b-a});
 			nameArray.push(item.name.text);
 			// tripsArray.push(item.trips);
 			tripsArray.push(getRandomInt(3,20));
+			tripsArray.sort(function(a,b){return b-a});
 		});
 
 		// $( "#paeMiles" ).append(totalMiles);
@@ -67,8 +71,8 @@ $.ajax({
 
 		renderAngularGraph('#paeParticipation', getRandomInt(10,100));
 
-		renderLeaderBoardChart('#paeMilesLeaderboard', '#0077D2', 'Miles', nameArray, milesArray );
-		renderLeaderBoardChart('#paeTripsLeaderboard', '#0077D2', 'Trips', nameArray, tripsArray );
+		renderLeaderBoardChart('#paeMilesLeaderboard', '#337ab7', 'Miles', nameArray, milesArray );
+		renderLeaderBoardChart('#paeTripsLeaderboard', '#337ab7', 'Trips', nameArray, tripsArray );
 	}
 });
 

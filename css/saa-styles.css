@@ -102,3 +102,8 @@ p.largeNumber {
 .companyLogo {
 	height: 70px;
 }
+
+.btn{
+	margin-top: 0px;
+	margin-bottom: 40px;
+}
