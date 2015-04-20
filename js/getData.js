@@ -14,21 +14,25 @@ $.ajax({
 		$.each(response.results.leaderboard, function(i, item) {
 			totalMiles = totalMiles + Math.abs(parseInt(item.miles));
 			totalTrips = totalTrips + Math.abs(parseInt(item.trips));
-			milesArray.push(item.miles);
+			// milesArray.push(item.miles);
+			milesArray.push(getRandomInt(10,200));
 			nameArray.push(item.name.text);
-			tripsArray.push(item.trips);
+			// tripsArray.push(item.trips);
+			tripsArray.push(getRandomInt(3,20));
 		});
 
+		// $( "#saaMiles" ).append(totalMiles);
+		$( "#saaMiles" ).append(getRandomInt(100,500));
+		// $( "#saaTrips" ).append(totalTrips);
+		$( "#saaTrips" ).append(getRandomInt(20,70));
 
-		$( "#saaMiles" ).append(totalMiles);
-		$( "#saaTrips" ).append(totalTrips);
-
-		renderAngularGraph('#saaParticipation', 85);
+		renderAngularGraph('#saaParticipation', getRandomInt(10,100));
 
 		renderLeaderBoardChart('#saaMilesLeaderboard', '#BB0000', 'Miles', nameArray, milesArray);
 		renderLeaderBoardChart('#saaTripsLeaderboard', '#BB0000', 'Trips', nameArray, tripsArray);
 
-		$( "#lastupdated" ).append(response.thisversionrun);
+		// $( "#lastupdated" ).append(response.thisversionrun);
+		$( "#lastupdated" ).append("This is all dummy data that will update when bike-to-work month starts.");
 
 	}
 });
@@ -49,15 +53,19 @@ $.ajax({
 		$.each(response.results.leaderboard, function(i, item) {
 			totalMiles = totalMiles + Math.abs(parseInt(item.miles));
 			totalTrips = totalTrips + Math.abs(parseInt(item.trips));
-			milesArray.push(item.miles);
+			// milesArray.push(item.miles);
+			milesArray.push(getRandomInt(10,200));
 			nameArray.push(item.name.text);
-			tripsArray.push(item.trips);
+			// tripsArray.push(item.trips);
+			tripsArray.push(getRandomInt(3,20));
 		});
 
-		$( "#paeMiles" ).append(totalMiles);
-		$( "#paeTrips" ).append(totalTrips);
+		// $( "#paeMiles" ).append(totalMiles);
+		$( "#paeMiles" ).append(getRandomInt(100,500));
+		// $( "#paeTrips" ).append(totalTrips);
+		$( "#paeTrips" ).append(getRandomInt(20,70));
 
-		renderAngularGraph('#paeParticipation', 70);
+		renderAngularGraph('#paeParticipation', getRandomInt(10,100));
 
 		renderLeaderBoardChart('#paeMilesLeaderboard', '#0077D2', 'Miles', nameArray, milesArray );
 		renderLeaderBoardChart('#paeTripsLeaderboard', '#0077D2', 'Trips', nameArray, tripsArray );
@@ -185,4 +193,8 @@ function renderAngularGraph(className, percentage) {
 
     }));
 
+}
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
 }
