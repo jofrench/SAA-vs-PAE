@@ -23,7 +23,7 @@ $.ajax({
 		$( "#saaMiles" ).append(totalMiles);
 		$( "#saaTrips" ).append(totalTrips);
 
-		renderAngularGraph('#saaParticipation', 0);
+		renderAngularGraph('#saaParticipation', 85);
 
 		renderLeaderBoardChart('#saaMilesLeaderboard', '#BB0000', 'Miles', nameArray, milesArray);
 		renderLeaderBoardChart('#saaTripsLeaderboard', '#BB0000', 'Trips', nameArray, tripsArray);
@@ -57,7 +57,7 @@ $.ajax({
 		$( "#paeMiles" ).append(totalMiles);
 		$( "#paeTrips" ).append(totalTrips);
 
-		renderAngularGraph('#paeParticipation', 0);
+		renderAngularGraph('#paeParticipation', 70);
 
 		renderLeaderBoardChart('#paeMilesLeaderboard', '#0077D2', 'Miles', nameArray, milesArray );
 		renderLeaderBoardChart('#paeTripsLeaderboard', '#0077D2', 'Trips', nameArray, tripsArray );
