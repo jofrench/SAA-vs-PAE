@@ -23,12 +23,13 @@ $.ajax({
 			tripsArray.sort(function(a,b){return b-a});
 		});
 
-		// $( "#saaMiles" ).append(totalMiles);
-		$( "#saaMiles" ).append(getRandomInt(100,500));
-		// $( "#saaTrips" ).append(totalTrips);
-		$( "#saaTrips" ).append(getRandomInt(20,70));
+		$( "#saaMiles" ).append(totalMiles);
+		$( "#saaTrips" ).append(totalTrips);
 
-		renderAngularGraph('#saaParticipation', getRandomInt(10,100));
+		// var trips = possibleTrips() * nameArray.length;
+		// var percentage = Math.floor((totalTrips / trips) * 100);
+
+		// // renderAngularGraph('#saaParticipation', percentage);
 
 		renderLeaderBoardChart('#saaMilesLeaderboard', '#BB0000', 'Miles', nameArray, milesArray);
 		renderLeaderBoardChart('#saaTripsLeaderboard', '#BB0000', 'Trips', nameArray, tripsArray);
@@ -64,12 +65,13 @@ $.ajax({
 			tripsArray.sort(function(a,b){return b-a});
 		});
 
-		// $( "#paeMiles" ).append(totalMiles);
-		$( "#paeMiles" ).append(getRandomInt(100,500));
-		// $( "#paeTrips" ).append(totalTrips);
-		$( "#paeTrips" ).append(getRandomInt(20,70));
+		$( "#paeMiles" ).append(totalMiles);
+		$( "#paeTrips" ).append(totalTrips);
 
-		renderAngularGraph('#paeParticipation', getRandomInt(10,100));
+		// var trips = possibleTrips() * nameArray.length;
+		// var percentage = Math.floor((totalTrips / trips) * 100);
+
+		// renderAngularGraph('#paeParticipation', percentage);
 
 		renderLeaderBoardChart('#paeMilesLeaderboard', '#337ab7', 'Miles', nameArray, milesArray );
 		renderLeaderBoardChart('#paeTripsLeaderboard', '#337ab7', 'Trips', nameArray, tripsArray );
@@ -201,4 +203,54 @@ function renderAngularGraph(className, percentage) {
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function possibleTrips() {
+	var startDate = new Date("2015-04-02");
+	var today = new Date();
+	var todayStatic = new Date();
+	console.log(today.toString());
+	var workingDays = workingDaysBetweenDates(startDate, today);
+	var trips = workingDays * 2;
+	if (todayStatic.getHours() < 19){
+		trips--;
+	}
+	console.log(trips);
+	return trips;
+}
+
+function workingDaysBetweenDates(startDate, endDate) {
+  
+    // Validate input
+    if (endDate < startDate)
+        return 0;
+    
+    // Calculate days between dates
+    var millisecondsPerDay = 86400 * 1000; // Day in milliseconds
+    startDate.setHours(0,0,0,1);  // Start just after midnight
+    endDate.setHours(23,59,59,999);  // End just before midnight
+    var diff = endDate - startDate;  // Milliseconds between datetime objects    
+    var days = Math.ceil(diff / millisecondsPerDay);
+    
+    // Subtract two weekend days for every week in between
+    var weeks = Math.floor(days / 7);
+    var days = days - (weeks * 2);
+
+    // Handle special cases
+    var startDay = startDate.getDay();
+    var endDay = endDate.getDay();
+    
+    // Remove weekend not previously removed.   
+    if (startDay - endDay > 1)         
+        days = days - 2;      
+    
+    // Remove start day if span starts on Sunday but ends before Saturday
+    if (startDay == 0 && endDay != 6)
+        days = days - 1  
+            
+    // Remove end day if span ends on Saturday but starts after Sunday
+    if (endDay == 6 && startDay != 0)
+        days = days - 1  
+    
+    return days;
 }
