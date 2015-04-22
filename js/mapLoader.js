@@ -3,9 +3,9 @@ var nextStore = 0;
 
 $.ajax({
   //get our JSON data
-  url:"https://data.seattle.gov/resource/3k2p-39jp.json?event_clearance_description=BICYCLE%20THEFT",
+  url:"https://www.strava.com/api/v3/clubs/134344/activities?access_token=ebda7a44647255023d1e121f45d9b5e767fb6c55&callback=callback_function",
   crossDomain: true,
-  dataType: "json",
+  dataType: "jsonp",
 
   // store the data as a JS object
   success: function (response) {
@@ -42,13 +42,20 @@ function initialize() {
 
   data = new google.maps.MVCArray();
 
-  //loop through our JSON object, adding points.
+  // loop through our JSON object, adding points.
   for (var key in stores){
     if (stores.hasOwnProperty(key)) {
-      data.push(new google.maps.LatLng(stores[key].latitude, stores[key].longitude));
+      
+      var latLongDecoded = google.maps.geometry.encoding.decodePath(stores[key].map.summary_polyline);
+      
+      for (var i = latLongDecoded.length - 1; i >= 0; i--) {
+        data.push(new google.maps.LatLng(latLongDecoded[i].k, latLongDecoded[i].D));
+      };
+
+        
     }
   }
-  
+
   //draw the heatmap
   heatmap = new google.maps.visualization.HeatmapLayer({
     map: map,
