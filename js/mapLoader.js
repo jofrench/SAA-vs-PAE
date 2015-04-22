@@ -2,10 +2,12 @@ var map, heatmap, data, stores;
 var nextStore = 0;
 
 $.ajax({
+  //get our JSON data
   url:"https://data.seattle.gov/resource/3k2p-39jp.json?event_clearance_description=BICYCLE%20THEFT",
   crossDomain: true,
   dataType: "json",
 
+  // store the data as a JS object
   success: function (response) {
     stores = response;
   }
@@ -47,6 +49,7 @@ function initialize() {
     }
   }
   
+  //draw the heatmap
   heatmap = new google.maps.visualization.HeatmapLayer({
     map: map,
     data: data,
