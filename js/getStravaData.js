@@ -53,8 +53,8 @@ function initialize() {
   heatmap = new google.maps.visualization.HeatmapLayer({
     map: map,
     data: data,
-    radius: 10,
-    opacity: 1,
+    radius: 6,
+    opacity: .6,
     dissipate: false,
   });
 
