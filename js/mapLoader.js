@@ -60,7 +60,7 @@ function initialize() {
   heatmap = new google.maps.visualization.HeatmapLayer({
     map: map,
     data: data,
-    radius: 10,
+    radius: 6,
     opacity: 0.6,
     dissipate: false,
   });
