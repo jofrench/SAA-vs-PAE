@@ -108,6 +108,19 @@
       </div>
       </div>
       
+      <!-- Metrics   -->
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <h3>Record Books</h3>
+          <h4>Longest Ride</h4>
+          <p id="longestRide"></p>
+          <h4>Max Speed</h4>
+          <p id="maxSpeed"></p>
+          <h4>Most Elevation Gain</h4>
+          <p id="elevationGain"></p>
+        </div>
+      </div>
+      
 
       <div class="row marketing">
         <div class="col-lg-12">
@@ -133,15 +146,15 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     
     <!-- grab the data from the Kimono API and generate our charts -->
-    <script src="js/getData.js"></script>
+    <script src="js/getLuumData.js"></script>
 
     <!-- our fancy charts -->
     <script src="js/highcharts/highcharts.js"></script>
     <script src="js/highcharts/highcharts-more.js"></script>
     <script src="js/highcharts/modules/solid-gauge.js"></script>
     
-    <!-- just loads a google map -->
-    <script src="js/mapLoader.js"></script>
+    <!-- loads data from Strava -->
+    <script src="js/getStravaData.js"></script>
     
 
     <!-- track that shit -->
