@@ -64,6 +64,9 @@ function initialize() {
   getStats(stores);
 }
 
+//@param jsonData: Strava's JSON object
+//@param dataArray: the global google map MVC array
+
 function getMapData(jsonData, dataArray) {
   // loop through our JSON object, adding points.
   for (var key in jsonData){
@@ -87,24 +90,34 @@ function getStats(jsonData) {
   // loop through our JSON object, adding points.
   for (var key in jsonData){
     if (jsonData.hasOwnProperty(key)) {
+      console.log("Key: " + key)
+      console.log("JSON Distance: " + jsonData[key].distance);
+      console.log("Longest Ride: " + longestRide.distance);
+      console.log("JSON Max Speed: " + jsonData[key].max_speed);
+      console.log("Max Speed: " + maxSpeed.speed);
+      console.log("JSON Elevation Gain: " + jsonData[key].total_elevation_gain);
+      console.log("Most Gain: " + elevationGain.gain);
 
       if (jsonData[key].distance > longestRide.distance) {
-        
         longestRide.key = key;
-        longestRide.distance = jsonData[key].distance * 0.000621371; //convert from meters to miles
+        longestRide.distance = jsonData[key].distance;
       };
 
       if (jsonData[key].max_speed > maxSpeed.speed) {
         maxSpeed.key = key;
-        maxSpeed.speed = jsonData[key].max_speed * 2.2369362920544; //convert to miles per hour
+        maxSpeed.speed = jsonData[key].max_speed;
       };
 
       if (jsonData[key].total_elevation_gain > elevationGain.gain) {
         elevationGain.key = key;
-        elevationGain.gain = jsonData[key].total_elevation_gain / 3.28084; //convert from meters to feet
+        elevationGain.gain = jsonData[key].total_elevation_gain;
       };
     }
   }
+  
+  longestRide.distance = longestRide.distance * 0.000621371;
+  maxSpeed.speed = maxSpeed.speed  * 2.2369362920544;
+  elevationGain.gain = elevationGain.gain * 3.28084;
 
   $( "#longestRide" ).append(longestRide.distance.toFixed(2) + ' miles <br >By <a href="https://www.strava.com/activities/'  + jsonData[longestRide.key].id + '">' + jsonData[longestRide.key].athlete.firstname + " " + jsonData[longestRide.key].athlete.lastname +"</a>");
   $( "#maxSpeed" ).append(maxSpeed.speed.toFixed(2) + ' mph <br >By <a href="https://www.strava.com/activities/'  + jsonData[maxSpeed.key].id + '">' + jsonData[maxSpeed.key].athlete.firstname + " " + jsonData[maxSpeed.key].athlete.lastname +"</a>");
