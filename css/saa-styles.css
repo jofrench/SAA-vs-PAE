@@ -97,13 +97,32 @@ img.stats {
 p.largeNumber {
 	font-weight: 700;
 	font-size: 4em;
+	line-height: 1em;
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+
+.recordLabel {
+	font-size: 1.3em;
 }
 
 .btn{
 	margin-top: 0px;
-	margin-bottom: 40px;
+	margin-bottom: 0px;
 }
 
 h4 {
+	margin-top: 50px;
+}
+
+h4.record {
 	margin-top: 10px;
+}
+
+h3 {
+	margin-top: 50px;
+}
+
+.companyLogo {
+	margin-top: 30px;
 }

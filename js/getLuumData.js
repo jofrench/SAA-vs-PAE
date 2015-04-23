@@ -34,8 +34,8 @@ $.ajax({
 		renderLeaderBoardChart('#saaMilesLeaderboard', '#BB0000', 'Miles', nameArray, milesArray);
 		renderLeaderBoardChart('#saaTripsLeaderboard', '#BB0000', 'Trips', nameArray, tripsArray);
 
-		// $( "#lastupdated" ).append(response.thisversionrun);
-		$( "#lastupdated" ).append("This is all dummy data that will update when bike-to-work month starts.");
+		$( "#lastupdated" ).append(response.thisversionrun);
+		// $( "#lastupdated" ).append("This is all dummy data that will update when bike-to-work month starts.");
 
 	}
 });

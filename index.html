@@ -39,12 +39,12 @@
       
       <!-- //Standings blocks -->
       <a name="standings" class="anchor" id="top"></a> 
-      <div class="row marketing">
+      <div class="row marketing text-center">
         
 
 
         <!-- Schacht Aslani's Block -->
-        <div class="col-lg-6 col-md-6 col-sm-6 text-center">
+        <div class="col-lg-6 col-md-6 col-sm-6">
           <div class="companyLogo">
             <img src="img/saa-logo.png" class="center-block img-responsive" width="80%" alt="SAA Logo" style="padding-top:20px;">
           </div>
@@ -52,11 +52,8 @@
           <h3>Saddle Addicted Architects</h3>
           <p>Tweed-wearing, bespectacled cycling savants who carve up the streets in style. Unless, of course, it's raining.</p>
           <a class="btn btn-lg btn-danger" href="http://bit.ly/1P7cxdu" role="button">Join Team</a>
-          <!-- chartLoader script will fill these divs -->
           <h4>Total Miles</h4>
           <p class="largeNumber" id="saaMiles"></p>
-<!--           <h4>Participation Rate</h4>
-          <div id="saaParticipation" class="participationGauge"></div> -->
           <h4>Total Trips</h4>
           <p class="largeNumber" id="saaTrips"></p>
           <h4>Miles Leaderboard</h4>
@@ -68,7 +65,7 @@
         
 
         <!-- PAE's Block -->
-        <div class="col-lg-6 col-md-6 col-sm-6 text-center">
+        <div class="col-lg-6 col-md-6 col-sm-6">
           <div class="companyLogo">
             <img src="img/PAE-logo.gif" class="center-block img-responsive" width="32.5%" alt="">
           </div>  
@@ -78,8 +75,6 @@
 
           <h4>Total Miles</h4>
           <p class="largeNumber" id="paeMiles"></p>
-<!--           <h4>Participation Rate</h4>
-          <div id="paeParticipation" class="participationGauge"></div> -->
           <h4>Total Trips</h4>
           <p class="largeNumber" id="paeTrips"></p>
           <h4>Miles Leaderboard</h4>
@@ -88,15 +83,17 @@
           <div id="paeTripsLeaderboard" class="leaderboardGraph"></div>
 
         </div> <!-- /.col-lg-6 -->
-        <div class="col-lg-12 text-center small">
+        
+        <div class="col-lg-12 small">
           <div id="lastupdated">Last updated: </div>
         </div>
+
       </div> <!-- /.row.marketing -->
       
 
       <!-- Map Section -->
       <a name="map" class="anchor" id="top"></a> 
-      <div class="row">
+      <div class="row text-center">
         <div class="col-lg-12">
           <h3>Ride Map</h3>
           <p>To have your rides show up on this map, join the <a href="https://www.strava.com/clubs/saa-vs-pae-134344">SAA-vs-PAE Club</a> on Strava.</p>
@@ -109,20 +106,32 @@
       </div>
       
       <!-- Metrics   -->
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6">
+      <div class="row text-center">
+        <div class="col-lg-12 col-md-12 col-sm-12">
           <h3>Record Books</h3>
-          <h4>Longest Ride</h4>
-          <p id="longestRide"></p>
-          <h4>Max Speed</h4>
-          <p id="maxSpeed"></p>
-          <h4>Most Elevation Gain</h4>
-          <p id="elevationGain"></p>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <h4 class="record">Longest Ride</h4>
+          <p id="longestRide" class="largeNumber"></p>
+          <p class="recordLabel">miles</p>
+          <p id="longestRideStats"></p>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4"> 
+          <h4 class="record">Max Speed</h4>
+          <p id="maxSpeed" class="largeNumber"></p>
+          <p class="recordLabel">mph</p>
+          <p id="maxSpeedStats"></p>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">  
+          <h4 class="record">Most Elevation Gain</h4>
+          <p id="elevationGain" class="largeNumber"></p>
+          <p class="recordLabel">feet</p>
+          <p id="elevationGainStats"></p>
         </div>
       </div>
       
 
-      <div class="row marketing">
+      <div class="row marketing text-center">
         <div class="col-lg-12">
           <h3>Be Social!</h3>
         </div>
