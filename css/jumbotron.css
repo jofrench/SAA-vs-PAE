@@ -56,6 +56,11 @@ body {
   padding-top: 40px;
   padding-bottom: 40px;
 }
+
+.jumbotron.no-padding.no-image {
+  background: white;
+}
+
 .jumbotron .btn {
   padding: 14px 24px;
   font-size: 21px;
