@@ -6,8 +6,8 @@ var longestRide = {key: 0, distance: 0};
 
 $.ajax({
   //get our JSON data
-  // url:"https://www.strava.com/api/v3/clubs/3905/activities?access_token=ebda7a44647255023d1e121f45d9b5e767fb6c55&per_page=50&callback=callback_function",
-  url:"https://www.strava.com/api/v3/clubs/134344/activities?access_token=ebda7a44647255023d1e121f45d9b5e767fb6c55&callback=callback_function",
+  // url:"https://www.strava.com/api/v3/clubs/3905/activities?access_token=ebda7a44647255023d1e121f45d9b5e767fb6c55&per_page=200&callback=callback_function",
+  url:"https://www.strava.com/api/v3/clubs/134344/activities?access_token=ebda7a44647255023d1e121f45d9b5e767fb6c55&per_page=200&callback=callback_function",
   crossDomain: true,
   dataType: "jsonp",
 
@@ -21,20 +21,21 @@ $.ajax({
 function initialize() {
 
   // Create an array of styles.
-  var styles = [{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#e0efef"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#1900ff"},{"color":"#c0e8e8"}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"},{"lightness":700}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#7dcdcd"}]}]
+  // var styles = [{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#e0efef"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#1900ff"},{"color":"#c0e8e8"}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"},{"lightness":700}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#7dcdcd"}]}]
   
   // Create a new StyledMapType object, passing it the array of styles,
   // as well as the name to be displayed on the map type control.
-  var styledMap = new google.maps.StyledMapType(styles,
-    {name: "Styled Map"});
+  // var styledMap = new google.maps.StyledMapType(styles,
+  //   {name: "Styled Map"});
 
   // Create a map object, and include the MapTypeId to add
   // to the map type control.
   var mapOptions = {
     zoom: 11,
     center: new google.maps.LatLng(47.6097, -122.3331),
+    mapTypeId: google.maps.MapTypeId.SATELLITE,
     mapTypeControlOptions: {
-      mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+      mapTypeId: [google.maps.MapTypeId.SATELLITE]
     },
     disableDefaultUI: true
   };
@@ -43,7 +44,7 @@ function initialize() {
   var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
 
   //Associate the styled map with the MapTypeId and set it to display.
-  map.mapTypes.set('map_style', styledMap);
+  // map.mapTypes.set('map_style', styledMap);
 
   data = new google.maps.MVCArray();
 
@@ -58,7 +59,7 @@ function initialize() {
     dissipate: false,
   });
 
-  map.setMapTypeId('map_style');
+  // map.setMapTypeId('map_style');
 
   getStats(stores);
 }
