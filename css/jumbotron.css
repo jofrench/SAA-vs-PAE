@@ -35,7 +35,7 @@ body {
 /* Customize container */
 @media (min-width: 768px) {
   .container {
-    max-width: 900px;
+    max-width: 1000px;
   }
 }
 .container-narrow > hr {
@@ -49,6 +49,8 @@ body {
   background-image: url(../img/bike-race.jpg);
   background-size: cover;
   color: white;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 .jumbotron .btn {
   padding: 14px 24px;

@@ -1,12 +1,16 @@
 .jumbotron .superYear {
-  font-size: 5em;
+  font-size: 7em;
   font-weight: 700;
   margin-bottom: 0;
 }
 
 .jumbotron h1 {
 	margin-top: 0;
-	font-size: 5em;
+	font-size: 6em;
+}
+
+.lead {
+	padding: 0px 140px 10px 140px;
 }
 
 @media (max-width: 768px) {
@@ -125,4 +129,9 @@ h3 {
 
 .companyLogo {
 	margin-top: 30px;
+}
+
+.glyphicon{
+	font-size: 2em;
+	margin-top: 20px;
 }

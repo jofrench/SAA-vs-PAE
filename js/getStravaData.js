@@ -107,7 +107,7 @@ function getStats(jsonData) {
     + jsonData[longestRide.key].athlete.lastname 
     +'<br><a href="https://www.strava.com/activities/'  
     + jsonData[longestRide.key].id 
-    + '" target="_blank">View Activity</a>');
+    + '" target="_blank">View Details</a>');
   $( "#maxSpeed" ).append(maxSpeed.speed.toFixed(2));
   $( "#maxSpeedStats" ).append(
     'By ' 
@@ -116,7 +116,7 @@ function getStats(jsonData) {
     + jsonData[maxSpeed.key].athlete.lastname 
     + '<br><a href="https://www.strava.com/activities/'  
     + jsonData[maxSpeed.key].id 
-    + '">View Activity</a>');
+    + '">View Details</a>');
   $( "#elevationGain" ).append(elevationGain.gain.toFixed(0));
   $( "#elevationGainStats" ).append(
     'By ' 
@@ -125,7 +125,7 @@ function getStats(jsonData) {
     + jsonData[elevationGain.key].athlete.lastname 
     + '<br><a href="https://www.strava.com/activities/'  
     + jsonData[elevationGain.key].id 
-    + '"  target="_blank">View Activity</a>');
+    + '"  target="_blank">View Details</a>');
 
 }
 
