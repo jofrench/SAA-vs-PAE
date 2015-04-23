@@ -124,7 +124,7 @@ h4.record {
 }
 
 h3 {
-	margin-top: 50px;
+	margin-top: 5em;
 }
 
 .companyLogo {
@@ -134,4 +134,12 @@ h3 {
 .glyphicon{
 	font-size: 2em;
 	margin-top: 20px;
+}
+
+.twitter {
+	margin-top: 20px;
+}
+
+.noMargins {
+	margin-top: 30px;
 }

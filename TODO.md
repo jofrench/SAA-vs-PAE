@@ -1,10 +1,13 @@
 # High Priority
 
-+   Get Kimono scraping set up to get data from Luum site
++   Add some kick-ass graphics
++   Find a good competitor, if PAE isn't interested. Miller Hull?
 
 # Standard Priority
 
-+   Create cool graphics (do we want a theme?)
++   Get the map polylines perfect.
++   Get scraping set up on competitor
++   Differentiate between teams on polylines?
 
 # Low Priority
 
