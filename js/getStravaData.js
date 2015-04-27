@@ -71,8 +71,8 @@ function initialize() {
       var PathStyle = new google.maps.Polyline({
         path: latLongDecoded,
         strokeColor: "#FF0000",
-        strokeOpacity: .5,
-        strokeWeight: 3
+        strokeOpacity: .3,
+        strokeWeight: 4
       });
 
       //draw the polyline
