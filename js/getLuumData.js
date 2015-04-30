@@ -41,7 +41,7 @@ $.ajax({
 });
 
 $.ajax({
-	url:"https://www.kimonolabs.com/api/bdnxjpqa?apikey=9adbc380301d558ba05315f79fff2e31&authorization=G3GwZYmY1egVWJOekuI1ec6HrdI8lOOm",
+	url:"https://www.kimonolabs.com/api/3ove9nxi?apikey=9adbc380301d558ba05315f79fff2e31&authorization=G3GwZYmY1egVWJOekuI1ec6HrdI8lOOm",
 	crossDomain: true,
 	dataType: "jsonp",
 	success: function (response) {
