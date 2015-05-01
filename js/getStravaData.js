@@ -14,7 +14,6 @@ $.ajax({
   // store the data as a JS object
   success: function (response) {
     stores = response;
-    console.log(stores);
   }
 });
 

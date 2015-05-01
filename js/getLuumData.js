@@ -14,28 +14,21 @@ $.ajax({
 		$.each(response.results.leaderboard, function(i, item) {
 			totalMiles = totalMiles + Math.abs(parseInt(item.miles));
 			totalTrips = totalTrips + Math.abs(parseInt(item.trips));
-			milesArray.push(item.miles);
-			// milesArray.push(getRandomInt(10,200));
-			milesArray.sort(function(a,b){return b-a});
+			milesArray.push(parseInt(item.miles));
 			nameArray.push(item.name.text);
 			tripsArray.push(item.trips);
-			// tripsArray.push(getRandomInt(3,20));
-			tripsArray.sort(function(a,b){return b-a});
 		});
+
+        console.log(milesArray);
+        console.log(tripsArray);
 
 		$( "#saaMiles" ).append(totalMiles);
 		$( "#saaTrips" ).append(totalTrips);
-
-		// var trips = possibleTrips() * nameArray.length;
-		// var percentage = Math.floor((totalTrips / trips) * 100);
-
-		// // renderAngularGraph('#saaParticipation', percentage);
 
 		renderLeaderBoardChart('#saaMilesLeaderboard', '#BB0000', 'Miles', nameArray, milesArray);
 		renderLeaderBoardChart('#saaTripsLeaderboard', '#BB0000', 'Trips', nameArray, tripsArray);
 
 		$( "#lastupdated" ).append(response.thisversionrun);
-		// $( "#lastupdated" ).append("This is all dummy data that will update when bike-to-work month starts.");
 
 	}
 });
@@ -56,22 +49,13 @@ $.ajax({
 		$.each(response.results.leaderboard, function(i, item) {
 			totalMiles = totalMiles + Math.abs(parseInt(item.miles));
 			totalTrips = totalTrips + Math.abs(parseInt(item.trips));
-			milesArray.push(item.miles);
-			// milesArray.push(getRandomInt(10,200));
-			milesArray.sort(function(a,b){return b-a});
+			milesArray.push(parseInt(item.miles));
 			nameArray.push(item.name.text);
 			tripsArray.push(item.trips);
-			// tripsArray.push(getRandomInt(3,20));
-			tripsArray.sort(function(a,b){return b-a});
 		});
 
 		$( "#paeMiles" ).append(totalMiles);
 		$( "#paeTrips" ).append(totalTrips);
-
-		// var trips = possibleTrips() * nameArray.length;
-		// var percentage = Math.floor((totalTrips / trips) * 100);
-
-		// renderAngularGraph('#paeParticipation', percentage);
 
 		renderLeaderBoardChart('#paeMilesLeaderboard', '#337ab7', 'Miles', nameArray, milesArray );
 		renderLeaderBoardChart('#paeTripsLeaderboard', '#337ab7', 'Trips', nameArray, tripsArray );
