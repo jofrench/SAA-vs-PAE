@@ -12,11 +12,11 @@ $.ajax({
 		var tripsArray = [];
 
 		$.each(response.results.leaderboard, function(i, item) {
-			totalMiles = totalMiles + Math.abs(parseInt(item.miles));
-			totalTrips = totalTrips + Math.abs(parseInt(item.trips));
-			milesArray.push(parseInt(item.miles));
+			totalMiles = totalMiles + Math.abs(parseFloat(item.miles));
+			totalTrips = totalTrips + Math.abs(parseFloat(item.trips));
+			milesArray.push(parseFloat(item.miles));
 			nameArray.push(item.name.text);
-			tripsArray.push(parseInt(item.trips));
+			tripsArray.push(parseFloat(item.trips));
 		});
 
         console.log(milesArray);
@@ -47,11 +47,11 @@ $.ajax({
 		var tripsArray = [];
 
 		$.each(response.results.leaderboard, function(i, item) {
-			totalMiles = totalMiles + Math.abs(parseInt(item.miles));
-			totalTrips = totalTrips + Math.abs(parseInt(item.trips));
-			milesArray.push(parseInt(item.miles));
+			totalMiles = totalMiles + Math.abs(parseFloat(item.miles));
+			totalTrips = totalTrips + Math.abs(parseFloat(item.trips));
+			milesArray.push(parseFloat(item.miles));
 			nameArray.push(item.name.text);
-			tripsArray.push(parseInt(item.trips));
+			tripsArray.push(parseFloat(item.trips));
 		});
 
 		$( "#paeMiles" ).append(totalMiles);
