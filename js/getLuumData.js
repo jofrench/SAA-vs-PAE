@@ -16,7 +16,7 @@ $.ajax({
 			totalTrips = totalTrips + Math.abs(parseInt(item.trips));
 			milesArray.push(parseInt(item.miles));
 			nameArray.push(item.name.text);
-			tripsArray.push(item.trips);
+			tripsArray.push(parseInt(item.trips));
 		});
 
         console.log(milesArray);
@@ -51,7 +51,7 @@ $.ajax({
 			totalTrips = totalTrips + Math.abs(parseInt(item.trips));
 			milesArray.push(parseInt(item.miles));
 			nameArray.push(item.name.text);
-			tripsArray.push(item.trips);
+			tripsArray.push(parseInt(item.trips));
 		});
 
 		$( "#paeMiles" ).append(totalMiles);
