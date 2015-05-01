@@ -14,12 +14,12 @@ $.ajax({
 		$.each(response.results.leaderboard, function(i, item) {
 			totalMiles = totalMiles + Math.abs(parseInt(item.miles));
 			totalTrips = totalTrips + Math.abs(parseInt(item.trips));
-			// milesArray.push(item.miles);
-			milesArray.push(getRandomInt(10,200));
+			milesArray.push(item.miles);
+			// milesArray.push(getRandomInt(10,200));
 			milesArray.sort(function(a,b){return b-a});
 			nameArray.push(item.name.text);
-			// tripsArray.push(item.trips);
-			tripsArray.push(getRandomInt(3,20));
+			tripsArray.push(item.trips);
+			// tripsArray.push(getRandomInt(3,20));
 			tripsArray.sort(function(a,b){return b-a});
 		});
 
@@ -56,12 +56,12 @@ $.ajax({
 		$.each(response.results.leaderboard, function(i, item) {
 			totalMiles = totalMiles + Math.abs(parseInt(item.miles));
 			totalTrips = totalTrips + Math.abs(parseInt(item.trips));
-			// milesArray.push(item.miles);
-			milesArray.push(getRandomInt(10,200));
+			milesArray.push(item.miles);
+			// milesArray.push(getRandomInt(10,200));
 			milesArray.sort(function(a,b){return b-a});
 			nameArray.push(item.name.text);
-			// tripsArray.push(item.trips);
-			tripsArray.push(getRandomInt(3,20));
+			tripsArray.push(item.trips);
+			// tripsArray.push(getRandomInt(3,20));
 			tripsArray.sort(function(a,b){return b-a});
 		});
 
