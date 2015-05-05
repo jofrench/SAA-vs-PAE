@@ -10,7 +10,8 @@ $.ajax({
 		var totalTrips = 0;
 		var nameArray = [];
 		var milesArray = [];
-		var tripsArray = [];
+        var tripsArray = [];
+		var commutesArray = [];
 
 		$.each(response.results.collection1, function(i, item) {
 			totalMiles = totalMiles + Math.abs(parseFloat(item.miles));
@@ -18,14 +19,16 @@ $.ajax({
 			totalTrips = totalTrips + Math.abs(parseFloat(item.trips));
 			milesArray.push(parseFloat(item.miles));
 			nameArray.push(item.name.text);
-			tripsArray.push(parseFloat(item.trips));
+            tripsArray.push(parseFloat(item.trips));
+			commutesArray.push(parseFloat(item.commutes));
 		});
 
 		$( "#saaMiles" ).append(totalMiles);
 		$( "#saaTrips" ).append(totalTrips);
 
 		renderLeaderBoardChart('#saaMilesLeaderboard', '#BB0000', 'Miles', nameArray, milesArray);
-		renderLeaderBoardChart('#saaTripsLeaderboard', '#BB0000', 'Trips', nameArray, tripsArray);
+        renderLeaderBoardChart('#saaTripsLeaderboard', '#BB0000', 'Trips', nameArray, tripsArray);
+		renderLeaderBoardChart('#saaCommutesLeaderboard', '#BB0000', 'Trips', nameArray, commutesArray);
 
 		$( "#lastupdated" ).append(response.thisversionrun);
 
@@ -45,7 +48,8 @@ $.ajax({
 		var totalTrips = 0;
 		var nameArray = [];
 		var milesArray = [];
-		var tripsArray = [];
+        var tripsArray = [];
+		var commutesArray = [];
 
 		$.each(response.results.leaderboard, function(i, item) {
 			totalMiles = totalMiles + Math.abs(parseFloat(item.miles));
@@ -53,13 +57,15 @@ $.ajax({
 			totalTrips = totalTrips + Math.abs(parseFloat(item.trips));
 			milesArray.push(parseFloat(item.miles));
 			nameArray.push(item.name.text);
-			tripsArray.push(parseFloat(item.trips));
+            tripsArray.push(parseFloat(item.trips));
+			commutesArray.push(parseFloat(item.commutes));
 		});
 
 		$( "#paeMiles" ).append(totalMiles);
 		$( "#paeTrips" ).append(totalTrips);
 
 		renderLeaderBoardChart('#paeMilesLeaderboard', '#337ab7', 'Miles', nameArray, milesArray );
+        renderLeaderBoardChart('#paeCommutesLeaderboard', '#337ab7', 'Trips', nameArray, commutesArray );
 		renderLeaderBoardChart('#paeTripsLeaderboard', '#337ab7', 'Trips', nameArray, tripsArray );
 	}
 });
