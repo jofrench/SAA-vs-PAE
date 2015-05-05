@@ -3,6 +3,8 @@ var maxSpeed = {key: 0, speed: 0};
 var elevationGain = {key: 0, gain: 0};
 var longestRide = {key: 0, distance: 0};
 var bounds = new google.maps.LatLngBounds();
+//an array for our heatmap points
+var pointArray = new google.maps.MVCArray();
 
 $.ajax({
   //get our JSON data
@@ -36,7 +38,6 @@ function initialize() {
     zoom: 10,
     center: new google.maps.LatLng(47.6097, -122.3331),
     mapTypeId: google.maps.MapTypeId.SATELLITE,
-    styles: styles,
     disableDefaultUI: true
   };
   
@@ -45,6 +46,8 @@ function initialize() {
 
   //Associate the styled map with the MapTypeId and set it to display.
   map.mapTypes.set('map_style', styledMap);
+
+  
 
   //run through every Strava object we get
   for (var key in stores){
@@ -59,6 +62,12 @@ function initialize() {
         
         //use Google's handy-dandy decoding tool
         var latLongDecoded = google.maps.geometry.encoding.decodePath(latLongEncoded);
+        console.log(latLongDecoded);
+        
+        for (var z = latLongDecoded.length -1; z >= 0; z--){
+          pointArray.push(latLongDecoded[z]);
+        }
+        
 
         //increase the bounds of the zoom, to ensure we capture all of the polylines
         for (var i = latLongDecoded.length - 1; i >= 0; i--) {
@@ -66,24 +75,18 @@ function initialize() {
         };
       }
 
-      //setting our polyline styles
-      var PathStyle = new google.maps.Polyline({
-        path: latLongDecoded,
-        strokeColor: "#FF0000",
-        strokeOpacity: .3,
-        strokeWeight: 4
-      });
 
-      //draw the polyline
-      PathStyle.setMap(map);
     }
   }
 
+  heatmap = new google.maps.visualization.HeatmapLayer({
+    data: pointArray
+  });
+
+  heatmap.setMap(map);
+
   //zoom the map to fit all of the polylines
   map.fitBounds (bounds);
-
-  //set the MapTypeId
-  map.setMapTypeId('map_style');
 
   //separated into a separate function, for ease of reading
   getStats(stores);
