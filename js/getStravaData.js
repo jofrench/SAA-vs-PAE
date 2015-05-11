@@ -80,7 +80,9 @@ function initialize() {
   }
 
   heatmap = new google.maps.visualization.HeatmapLayer({
-    data: pointArray
+    data: pointArray,
+    radius: 6,
+    dissipating: true
   });
 
   heatmap.setMap(map);
