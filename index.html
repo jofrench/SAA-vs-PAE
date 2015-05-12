@@ -51,9 +51,13 @@
           
           <h3 class="noMargins">Saddle Addicted Architects</h3>
           <p>Tweed-wearing, bespectacled cycling savants who carve up the streets in style. Unless, of course, it's raining.</p>
-          <h4>Total Miles</h4>
+          <h4>Points</h4>
+          <p class="largeNumber" id="saaPoints"></p>
+          <h4>Miles</h4>
           <p class="largeNumber" id="saaMiles"></p>
-          <h4>Total Trips</h4>
+          <h4>Commutes</h4>
+          <p class="largeNumber" id="saaCommutes"></p>
+          <h4>Trips</h4>
           <p class="largeNumber" id="saaTrips"></p>
           <h4>Miles</h4>
           <div id="saaMilesLeaderboard" class="leaderboardGraph"></div>
@@ -72,9 +76,13 @@
           </div>  
           <h3 class="noMargins">Pedal Accelerated Engineers</h3>
           <p>Boldly cycling the greatest possible distance with the least possible expenditure of energy in the fastest possible time.</p>
-          <h4>Total Miles</h4>
+          <h4>Points</h4>
+          <p class="largeNumber" id="paePoints"></p>
+          <h4>Miles</h4>
           <p class="largeNumber" id="paeMiles"></p>
-          <h4>Total Trips</h4>
+          <h4>Commutes</h4>
+          <p class="largeNumber" id="paeCommutes"></p>
+          <h4>Trips</h4>
           <p class="largeNumber" id="paeTrips"></p>
           <h4>Miles</h4>
           <div id="paeMilesLeaderboard" class="leaderboardGraph"></div>
@@ -87,6 +95,11 @@
         
         <div class="col-lg-12 small">
           <div id="lastupdated">Last updated: </div>
+          <div>
+            <p>Points are calculated as follows. 4 points for a commute trip, 2 points for a non-commute trip, and 1 point per mile.
+            <br>
+            Therefore, someone riding 3 miles to work during the week would earn 70 points. ((4 points/trip + 3 miles/trip) * 10 trips)</p>
+          </div>
         </div>
 
       </div> <!-- /.row.marketing -->

@@ -7,7 +7,8 @@ $.ajax({
 		// these are stub numbers from a test API
 		
 		var totalMiles = 0;
-		var totalTrips = 0;
+        var totalTrips = 0;
+		var totalCommutes = 0;
 		var nameArray = [];
 		var milesArray = [];
         var tripsArray = [];
@@ -16,6 +17,7 @@ $.ajax({
 		$.each(response.results.collection1, function(i, item) {
 			totalMiles = totalMiles + Math.abs(parseFloat(item.miles));
             totalMiles = +((totalMiles).toFixed(2));
+            totalCommutes = totalCommutes + Math.abs(parseFloat(item.commutes));
 			totalTrips = totalTrips + Math.abs(parseFloat(item.trips));
 			milesArray.push(parseFloat(item.miles));
 			nameArray.push(item.name.text);
@@ -23,12 +25,17 @@ $.ajax({
 			commutesArray.push(parseFloat(item.commutes));
 		});
 
-		$( "#saaMiles" ).append(totalMiles);
+        var points = (4 * totalCommutes) + (2 * (totalTrips - totalCommutes)) + totalMiles;
+        points = +((points).toFixed(0));
+
+        $( "#saaPoints" ).append(points);
+        $( "#saaMiles" ).append(totalMiles);
+		$( "#saaCommutes" ).append(totalCommutes);
 		$( "#saaTrips" ).append(totalTrips);
 
 		renderLeaderBoardChart('#saaMilesLeaderboard', '#BB0000', 'Miles', nameArray, milesArray);
+		renderLeaderBoardChart('#saaCommutesLeaderboard', '#BB0000', 'Commutes', nameArray, commutesArray);
         renderLeaderBoardChart('#saaTripsLeaderboard', '#BB0000', 'Trips', nameArray, tripsArray);
-		renderLeaderBoardChart('#saaCommutesLeaderboard', '#BB0000', 'Trips', nameArray, commutesArray);
 
 		$( "#lastupdated" ).append(response.thisversionrun);
 
@@ -44,28 +51,35 @@ $.ajax({
 	dataType: "jsonp",
 	success: function (response) {
 		
-		var totalMiles = 0;
-		var totalTrips = 0;
-		var nameArray = [];
-		var milesArray = [];
+        var totalMiles = 0;
+        var totalTrips = 0;
+        var totalCommutes = 0;
+        var nameArray = [];
+        var milesArray = [];
         var tripsArray = [];
-		var commutesArray = [];
+        var commutesArray = [];
 
-		$.each(response.results.leaderboard, function(i, item) {
-			totalMiles = totalMiles + Math.abs(parseFloat(item.miles));
+        $.each(response.results.leaderboard, function(i, item) {
+            totalMiles = totalMiles + Math.abs(parseFloat(item.miles));
             totalMiles = +((totalMiles).toFixed(2));
-			totalTrips = totalTrips + Math.abs(parseFloat(item.trips));
-			milesArray.push(parseFloat(item.miles));
-			nameArray.push(item.name.text);
+            totalCommutes = totalCommutes + Math.abs(parseFloat(item.commutes));
+            totalTrips = totalTrips + Math.abs(parseFloat(item.trips));
+            milesArray.push(parseFloat(item.miles));
+            nameArray.push(item.name.text);
             tripsArray.push(parseFloat(item.trips));
-			commutesArray.push(parseFloat(item.commutes));
-		});
+            commutesArray.push(parseFloat(item.commutes));
+        });
 
-		$( "#paeMiles" ).append(totalMiles);
+        var points = (4 * totalCommutes) + (2 * (totalTrips - totalCommutes)) + totalMiles;
+        points = +((points).toFixed(0));
+
+        $( "#paePoints" ).append(points);
+        $( "#paeMiles" ).append(totalMiles);
+		$( "#paeCommutes" ).append(totalCommutes);
 		$( "#paeTrips" ).append(totalTrips);
 
 		renderLeaderBoardChart('#paeMilesLeaderboard', '#337ab7', 'Miles', nameArray, milesArray );
-        renderLeaderBoardChart('#paeCommutesLeaderboard', '#337ab7', 'Trips', nameArray, commutesArray );
+        renderLeaderBoardChart('#paeCommutesLeaderboard', '#337ab7', 'Commutes', nameArray, commutesArray );
 		renderLeaderBoardChart('#paeTripsLeaderboard', '#337ab7', 'Trips', nameArray, tripsArray );
 	}
 });

@@ -62,7 +62,6 @@ function initialize() {
         
         //use Google's handy-dandy decoding tool
         var latLongDecoded = google.maps.geometry.encoding.decodePath(latLongEncoded);
-        console.log(latLongDecoded);
         
         for (var z = latLongDecoded.length -1; z >= 0; z--){
           pointArray.push(latLongDecoded[z]);
